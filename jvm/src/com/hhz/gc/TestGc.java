@@ -6,6 +6,9 @@ import java.util.Properties;
 import java.util.Random;
 
 /**
+ * 分别使用串行:-XX:+UseSerialGC -XX:+PrintGCDetails -Xms16m -Xmx16m
+ *        并行:-XX:+UseParNewGC -XX:+PrintGCDetails -Xms16m -Xmx16m
+ * 垃圾回收
  * @Author hehongzhi
  * @Date 2019-08-24
  * @Version 1.0
