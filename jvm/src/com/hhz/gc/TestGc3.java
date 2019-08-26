@@ -6,15 +6,17 @@ import java.util.Properties;
 import java.util.Random;
 
 /**
- * 分别使用串行:-XX:+UseSerialGC -XX:+PrintGCDetails -Xms16m -Xmx16m
- *        并行:-XX:+UseParNewGC -XX:+PrintGCDetails -Xms16m -Xmx16m
- * 垃圾回收
+ * CMS全称 Concurrent Mark Sweep，是一款并发的、使用标记-清除算法的垃圾回收器，
+ * 该回收器是针对老年代垃圾回收的，通过参数-XX:+UseConcMarkSweepGC进行设置。
+ * :‐XX:+UseConcMarkSweepGC ‐XX:+PrintGCDetails ‐Xms16m ‐Xmx16m
+ *
+ *
  * @Author hehongzhi
- * @Date 2019-08-24
+ * @Date 2019-08-25
  * @Version 1.0
  */
 
-public class TestGc {
+public class TestGc3 {
 
     public static void main(String[] args) throws Exception {
 
@@ -29,7 +31,7 @@ public class TestGc {
                 //向list添加10000个对象并且设置最大内存为16M
                 for (int i = 0; i < 10000; i++) {
                     Properties properties = new Properties();
-                    properties.put("key_" + i, "value_" + System.currentTimeMillis());
+                    properties.put("key__" + i, "value_" + System.currentTimeMillis());
                     list.add(properties);
                 }
             }

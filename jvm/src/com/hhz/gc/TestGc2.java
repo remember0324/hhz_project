@@ -34,7 +34,7 @@ public class TestGc2 {
 
     public static void main(String[] args) throws Exception {
 
-        //实现:不断的产生新的数据(对象),生育户的废弃对象(垃圾)
+        //实现:不断的产生新的数据(对象),随机的的废弃对象(垃圾)
         List<Object> list = new ArrayList<>();
 
         while (true) {

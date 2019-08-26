@@ -6,15 +6,18 @@ import java.util.Properties;
 import java.util.Random;
 
 /**
- * 分别使用串行:-XX:+UseSerialGC -XX:+PrintGCDetails -Xms16m -Xmx16m
- *        并行:-XX:+UseParNewGC -XX:+PrintGCDetails -Xms16m -Xmx16m
- * 垃圾回收
+ * G1垃圾收集器相对比其他收集器而言，最大的区别在于它取消了年轻代、老年代的物理
+ * 划分，取而代之的是将堆划分为若干个区域（Region），这些区域中包含了有逻辑上的
+ * 年轻代、老年代区域。
+ * -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:+PrintGCDetails -Xmx256m
+ *
+ *
  * @Author hehongzhi
- * @Date 2019-08-24
+ * @Date 2019-08-25
  * @Version 1.0
  */
 
-public class TestGc {
+public class TestGc4 {
 
     public static void main(String[] args) throws Exception {
 
@@ -29,7 +32,7 @@ public class TestGc {
                 //向list添加10000个对象并且设置最大内存为16M
                 for (int i = 0; i < 10000; i++) {
                     Properties properties = new Properties();
-                    properties.put("key_" + i, "value_" + System.currentTimeMillis());
+                    properties.put("key__" + i, "value_" + System.currentTimeMillis());
                     list.add(properties);
                 }
             }

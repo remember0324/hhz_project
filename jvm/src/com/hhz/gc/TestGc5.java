@@ -6,15 +6,19 @@ import java.util.Properties;
 import java.util.Random;
 
 /**
- * 分别使用串行:-XX:+UseSerialGC -XX:+PrintGCDetails -Xms16m -Xmx16m
- *        并行:-XX:+UseParNewGC -XX:+PrintGCDetails -Xms16m -Xmx16m
- * 垃圾回收
+ *可视化测试
+ *
+ *
+ * -XX:+UseG1GC ‐XX:MaxGCPauseMillis=100 ‐Xmx256m ‐XX:+PrintGCDetails ‐
+ * XX:+PrintGCTimeStamps ‐XX:+PrintGCDateStamps ‐XX:+PrintHeapAtGC ‐
+ * Xloggc:E://test//gc.log
+ *
  * @Author hehongzhi
- * @Date 2019-08-24
+ * @Date 2019-08-25
  * @Version 1.0
  */
 
-public class TestGc {
+public class TestGc5 {
 
     public static void main(String[] args) throws Exception {
 
@@ -29,7 +33,7 @@ public class TestGc {
                 //向list添加10000个对象并且设置最大内存为16M
                 for (int i = 0; i < 10000; i++) {
                     Properties properties = new Properties();
-                    properties.put("key_" + i, "value_" + System.currentTimeMillis());
+                    properties.put("key__" + i, "value_" + System.currentTimeMillis());
                     list.add(properties);
                 }
             }
