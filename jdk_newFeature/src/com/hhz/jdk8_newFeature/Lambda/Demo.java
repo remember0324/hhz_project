@@ -6,6 +6,8 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
+ * Lambda表达式与普通实现接口实现的区别
+ *
  * @Author hehongzhi
  * @Date 2019-08-30
  * @Version 1.0
@@ -30,12 +32,12 @@ public class Demo {
         names2.add("Sina ");
 
         Demo tester = new Demo();
-        System.out.println("使用 Java 7 语法: ");
 
+        System.out.println("使用 Java 7 语法: ");
         tester.sortUsingJava7(names1);
         System.out.println(names1);
-        System.out.println("使用 Java 8 语法: ");
 
+        System.out.println("使用 Java 8 语法: ");
         tester.sortUsingJava8(names2);
         System.out.println(names2);
     }
@@ -52,6 +54,8 @@ public class Demo {
 
     // 使用 java 8 排序
     private void sortUsingJava8(List<String> names) {
+
+        // Collections.sort(names, String::compareTo);
 
         Collections.sort(names, (s1, s2) -> s1.compareTo(s2));
 
