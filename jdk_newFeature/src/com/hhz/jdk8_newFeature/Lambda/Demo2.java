@@ -10,7 +10,7 @@ package com.hhz.jdk8_newFeature.Lambda;
  * 可选的大括号：如果主体包含了一个语句，就不需要使用大括号。
  * 可选的返回关键字：如果主体只有一个表达式返回值则编译器会自动返回值，大括号需要指定明表达式返回了一个数值。
  *
- * @Author hehongzhi
+ * @Author Rem
  * @Date 2019-08-30
  * @Version 1.0
  */
@@ -31,8 +31,15 @@ public class Demo2 {
         void sayMessage(String message);
     }
 
+    //不做具体实现
     private int operate(int a, int b, MathOperation mathOperation) {
         return mathOperation.operation(a, b);
+    }
+
+    //具体实现
+    private int operate2(int a, int b) {
+        MathOperation m = (aa, bb) -> aa - bb;
+        return m.operation(a, b);
     }
 
     public static void main(String[] args) {

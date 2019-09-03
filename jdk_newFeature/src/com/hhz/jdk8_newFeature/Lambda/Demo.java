@@ -6,9 +6,10 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
+ * Lambda表达式所用的接口必须是函数式编程
  * Lambda表达式与普通实现接口实现的区别
  *
- * @Author hehongzhi
+ * @Author Rem
  * @Date 2019-08-30
  * @Version 1.0
  */
